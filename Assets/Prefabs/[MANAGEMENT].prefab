@@ -1,0 +1,419 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2422229101818168989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3472074243049458338}
+  - component: {fileID: 1768882494011908195}
+  - component: {fileID: 7696822280895100663}
+  - component: {fileID: 671520132551889176}
+  m_Layer: 0
+  m_Name: Arcane Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3472074243049458338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422229101818168989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8223790148907049082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1768882494011908195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422229101818168989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f3a6c32dd9cb4408ad2223464f5518f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneGameManager
+  matchDuration: 240
+  startingEnergy: 5
+  maxEnergy: 10
+  energyPerSecond: 0.5
+  finalMinuteEnergyPerSecond: 1
+  timerText: {fileID: 0}
+  energyText: {fileID: 0}
+  energyBarFill: {fileID: 0}
+  energyDrops:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  energyDropSprite: {fileID: 21300000, guid: 5cf985dc286814e6ba76a10e0a9be380, type: 3}
+  statusText: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  resultDetailsText: {fileID: 0}
+  topRestartButton: {fileID: 0}
+  gameOverRestartButton: {fileID: 0}
+--- !u!114 &7696822280895100663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422229101818168989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae0afccdbc5643dda4212cf68d143b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneDeckManager
+  unitBasePrefab: {fileID: 8075892425996875696}
+  initialDeck:
+  - id: warrior
+    cardName: "\u0412\u043E\u0457\u043D"
+    cost: 3
+    cardType: 0
+    cardColor: {r: 0.35, g: 0.7, b: 1, a: 1}
+    cardSprite: {fileID: 21300000, guid: 7f5493bb67bec453b9a9ab10675d0c93, type: 3}
+    maxHp: 850
+    damage: 90
+    moveSpeed: 0.85
+    attackRange: 0.45
+    attackInterval: 1.2
+    unitCategory: 1
+    targetCategories: 5
+    isRanged: 0
+    projectileSpeed: 6
+    modelScale: 0.575
+    healthBarOffsetY: 0.5
+    healthBarWidth: 0.3
+    spellType: 0
+    spellRadius: 1
+    spellPower: 400
+  - id: archer
+    cardName: "\u041B\u0443\u0447\u043D\u0438\u043A"
+    cost: 3
+    cardType: 0
+    cardColor: {r: 0.45, g: 1, b: 0.55, a: 1}
+    cardSprite: {fileID: 21300000, guid: ae553902c02df455da311b0326483f39, type: 3}
+    maxHp: 350
+    damage: 110
+    moveSpeed: 0.75
+    attackRange: 1.6
+    attackInterval: 1.1
+    unitCategory: 1
+    targetCategories: 7
+    isRanged: 1
+    projectileSpeed: 7.5
+    modelScale: 0.475
+    healthBarOffsetY: 0.5
+    healthBarWidth: 0.3
+    spellType: 0
+    spellRadius: 2.2
+    spellPower: 400
+  - id: golem
+    cardName: "\u0413\u043E\u043B\u0435\u043C"
+    cost: 5
+    cardType: 0
+    cardColor: {r: 0.75, g: 0.5, b: 0.95, a: 1}
+    cardSprite: {fileID: 21300000, guid: 33f6c4a92dcb547d48c3f2ecb316894f, type: 3}
+    maxHp: 2200
+    damage: 150
+    moveSpeed: 0.45
+    attackRange: 0.9
+    attackInterval: 2
+    unitCategory: 1
+    targetCategories: 4
+    isRanged: 0
+    projectileSpeed: 6
+    modelScale: 1.15
+    healthBarOffsetY: 1.05
+    healthBarWidth: 0.6
+    spellType: 0
+    spellRadius: 2.2
+    spellPower: 400
+  - id: drone
+    cardName: "\u0414\u0440\u043E\u043D"
+    cost: 4
+    cardType: 0
+    cardColor: {r: 0.2, g: 0.95, b: 0.9, a: 1}
+    cardSprite: {fileID: 21300000, guid: ba8682ea212d042d297fa47a00b1ed47, type: 3}
+    maxHp: 500
+    damage: 95
+    moveSpeed: 0.95
+    attackRange: 1.2
+    attackInterval: 0.9
+    unitCategory: 2
+    targetCategories: 5
+    isRanged: 1
+    projectileSpeed: 8
+    modelScale: 1.1
+    healthBarOffsetY: 0.82
+    healthBarWidth: 0.44
+    spellType: 0
+    spellRadius: 2.2
+    spellPower: 400
+  - id: fireball
+    cardName: "\u0412\u043E\u0433\u043D. \u043A\u0443\u043B\u044F"
+    cost: 4
+    cardType: 1
+    cardColor: {r: 1, g: 0.45, b: 0.15, a: 1}
+    cardSprite: {fileID: 21300000, guid: 3ea4af2d0a9a9447abefa4cb9d867c98, type: 3}
+    maxHp: 850
+    damage: 90
+    moveSpeed: 0.85
+    attackRange: 0.85
+    attackInterval: 1.2
+    unitCategory: 1
+    targetCategories: 5
+    isRanged: 0
+    projectileSpeed: 6
+    modelScale: 1
+    healthBarOffsetY: 0.7
+    healthBarWidth: 0.44
+    spellType: 0
+    spellRadius: 2.2
+    spellPower: 400
+  - id: heal
+    cardName: "\u041B\u0456\u043A\u0443\u0432\u0430\u043D\u043D\u044F"
+    cost: 3
+    cardType: 1
+    cardColor: {r: 0.3, g: 1, b: 0.45, a: 1}
+    cardSprite: {fileID: 21300000, guid: 1be27689f722c4d67a3615a1cf1dc9df, type: 3}
+    maxHp: 850
+    damage: 90
+    moveSpeed: 0.85
+    attackRange: 0.85
+    attackInterval: 1.2
+    unitCategory: 1
+    targetCategories: 5
+    isRanged: 0
+    projectileSpeed: 6
+    modelScale: 1
+    healthBarOffsetY: 0.7
+    healthBarWidth: 0.44
+    spellType: 1
+    spellRadius: 2.5
+    spellPower: 350
+  handButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  handNameTexts: []
+  handCostTexts: []
+  handBackgrounds:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  selectedIndicator: {fileID: 0}
+  nextCardNameText: {fileID: 0}
+  nextCardCostText: {fileID: 0}
+  nextCardBackground: {fileID: 0}
+  placementGhost: {fileID: 0}
+--- !u!114 &671520132551889176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2422229101818168989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd1df641df8e4ea6a51c64ca64f3753, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneAudio
+  masterVolume: 0.35
+  sfxVolume: 0.1
+  musicVolume: 0.3
+  cardSelect: {fileID: 8300000, guid: 455c9a531887a473d94205c850b494ec, type: 3}
+  cardNoEnergy: {fileID: 8300000, guid: 183676963451d493fbd3eda559c8b117, type: 3}
+  spawnWarrior: {fileID: 8300000, guid: fd306b27a281c4c0f90f0cd16e611410, type: 3}
+  spawnArcher: {fileID: 8300000, guid: a717ca9d5f66843969c4de29cdbf89f1, type: 3}
+  spawnGolem: {fileID: 8300000, guid: af86593c99ae544549107620252a6586, type: 3}
+  spawnDrone: {fileID: 8300000, guid: 6ad70b45566994b6db0e7443996d940c, type: 3}
+  attackWarrior: {fileID: 8300000, guid: 92ad38dfee11e4d54b850f036a8160cb, type: 3}
+  attackArcher: {fileID: 8300000, guid: 9c22a49e5f3b441cb8d61b0a977ca3b5, type: 3}
+  attackGolem: {fileID: 8300000, guid: e34b2b57b7ac64f66a07cfc645f9979b, type: 3}
+  attackDrone: {fileID: 8300000, guid: 79a28ba66654c4c3fa4bd403da10b574, type: 3}
+  towerShotMain: {fileID: 8300000, guid: cd427fdb6f9274e0fa6c6ec08d91bf07, type: 3}
+  towerShotSide: {fileID: 8300000, guid: 2cadd16567bc0432e95ca7268c6389d7, type: 3}
+  towerDestroy: {fileID: 8300000, guid: 8828a67d8126b48fcbc694dd8759741d, type: 3}
+  spellFireball: {fileID: 8300000, guid: 835ec830df92143c3b5b36a77fc88c23, type: 3}
+  spellHeal: {fileID: 8300000, guid: d7831a0bd1dce4da6a1d463d23ff5d03, type: 3}
+  bgmBattle: {fileID: 8300000, guid: 9105c5ab1d2bf4273b4426f7335f95d4, type: 3}
+--- !u!1 &3308697206995949051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2930259707367673650}
+  - component: {fileID: 5084313795489047698}
+  - component: {fileID: 8075892425996875696}
+  m_Layer: 0
+  m_Name: Unit_Template
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2930259707367673650
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308697206995949051}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30, y: 30, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8223790148907049082}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &5084313795489047698
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308697206995949051}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.45, y: 1.74}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 0
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
+--- !u!114 &8075892425996875696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3308697206995949051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1c11c9a35f3497ab6093c196654ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ArcaneUnit
+  isPlayer: 0
+  unitId: warrior
+  unitName: Knight
+  category: 1
+  attackableTargets: 5
+  maxHp: 120
+  hp: 120
+  moveSpeed: 0.85
+  attackRange: 0.85
+  detectionRange: 3.5
+  damage: 22
+  attackInterval: 1
+  isRanged: 0
+  projectileSpeed: 7
+  barOffsetY: 0.7
+  barWidth: 0.44
+  walkFrames: []
+  attackFrames: []
+  deathFrames: []
+  frameDuration: 0.28
+--- !u!1 &4902629488603667265
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8223790148907049082}
+  m_Layer: 0
+  m_Name: '[MANAGEMENT]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8223790148907049082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902629488603667265}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2930259707367673650}
+  - {fileID: 3472074243049458338}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
